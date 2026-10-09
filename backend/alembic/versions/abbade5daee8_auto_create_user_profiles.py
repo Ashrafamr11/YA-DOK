@@ -5,17 +5,15 @@ Revises: 794ab74c275c
 Create Date: 2026-10-08 02:27:02.813018
 
 """
-from typing import Sequence, Union
+from collections.abc import Sequence
 
 from alembic import op
-import sqlalchemy as sa
-
 
 # revision identifiers, used by Alembic.
 revision: str = 'abbade5daee8'
-down_revision: Union[str, Sequence[str], None] = '794ab74c275c'
-branch_labels: Union[str, Sequence[str], None] = None
-depends_on: Union[str, Sequence[str], None] = None
+down_revision: str | Sequence[str] | None = '794ab74c275c'
+branch_labels: str | Sequence[str] | None = None
+depends_on: str | Sequence[str] | None = None
 
 
 

@@ -1,12 +1,10 @@
 
 import httpx
-
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from app.api.routes import auth
 from app.core.config import settings
-
 
 # Test the real auth router without connecting to the database
 app = FastAPI()

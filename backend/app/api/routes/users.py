@@ -1,4 +1,5 @@
 
+from typing import Annotated
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -9,7 +10,6 @@ from app.core.security import get_current_user
 from app.models.profile import Profile
 from app.schemas.profile import ProfileResponse
 
-
 router = APIRouter(
     prefix="/users",
     tags=["Users"],
@@ -18,8 +18,8 @@ router = APIRouter(
 
 @router.get("/me", response_model=ProfileResponse)
 def get_my_profile(
-    current_user: dict = Depends(get_current_user),
-    db: Session = Depends(get_db),
+    current_user: Annotated[dict, Depends(get_current_user)],
+    db: Annotated[Session, Depends(get_db)],
 ):
     # Get the authenticated user's profile
     profile = db.get(Profile, UUID(current_user["id"]))

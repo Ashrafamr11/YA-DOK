@@ -6,7 +6,6 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.core.config import settings
 
-
 # Database connection
 engine = create_engine(
     settings.database_url,

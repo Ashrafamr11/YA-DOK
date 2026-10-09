@@ -5,7 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import auth, health, users
 from app.core.config import settings
 
-
 app = FastAPI(
     title="Yadok AI API",
     version="0.1.0",

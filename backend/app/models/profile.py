@@ -12,12 +12,10 @@ from sqlalchemy import (
     Text,
     func,
 )
-
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.core.database import Base
-
 
 # Reference to Supabase Auth users.
 # Separate metadata prevents Alembic from managing auth.users.
